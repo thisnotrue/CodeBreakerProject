@@ -11,13 +11,13 @@ function guess() {
     }
 
     //input validation
-    if (!validateInput(input.value)) {
+    if (!validateInput(input)) {
         return false;
     } else {
         attempt.value++;
     }
 
-    if (getResults(input.value)) {
+    if (getResults(input)) {
         setMessage('You Win! :)');
         showAnswer(true);
         showReplay();
