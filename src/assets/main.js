@@ -6,7 +6,7 @@ function guess() {
     //add functionality to guess function here
 
     //initialization
-    if (answer.value == '' || attemp.value == '') {
+    if (answer.value == '' || attempt.value == '') {
         setHiddenFields();
     }
 
@@ -37,7 +37,7 @@ function setHiddenFields() {
     attempt.value = 0;
 
     answer.value = Math.floor(Math.random() * 10000);
-    answer = answer.value.toString();
+    answer.value = answer.value.toString();
     while (answer.length < 4) {
         answer = '0' + answer;
     }
@@ -51,7 +51,7 @@ function setMessage(message) {
 
 //Call the validateInput function from the guess function
 function validateInput(input) {
-    if (input.value.length == 4) {
+    if (input.length == 4) {
         return true;
     } else {
         setMessage('Guesses must be exactly 4 characters long.');
@@ -106,8 +106,8 @@ function showAnswer(success){
 function showReplay(){
     let guess = document.getElementById('guessing-div');
     let replay = document.getElementById('replay-div');
-    guess.style.display = none;
-    replay.style.display = block;
+    guess.style.display = 'none';
+    replay.style.display = 'block';
 }
 
 
