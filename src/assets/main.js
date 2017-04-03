@@ -38,8 +38,8 @@ function setHiddenFields() {
 
     answer.value = Math.floor(Math.random() * 10000);
     answer.value = answer.value.toString();
-    while (answer.length < 4) {
-        answer = '0' + answer;
+    while (answer.value.length < 4) {
+        answer.value = '0' + answer.value;
     }
     //console.log(answer);
 }
