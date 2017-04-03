@@ -60,18 +60,18 @@ function validateInput(inp) {
 }
 
 //Create getResults function
-function getResults(inp) {
+function getResults(inp.value) {
 
     let results = document.getElementById('results');
-    let div = '<div class="row"><span class="col-md-6">' + inp + '</span><div class="col-md-6">';
+    let div = '<div class="row"><span class="col-md-6">' + inp.value + '</span><div class="col-md-6">';
     let count = 0;
 
     for (let i = 0; i < 4; i++) {
         for (let y = 0; y < 4; y++) {
-            if (input.value[i] == answer.value[y] && y == i) {
+            if (inp.value[i] == answer.value[y] && y == i) {
                 count++;
                 div += '<span class="glyphicon glyphicon-ok"></span>'
-            } else if (input.value[i] == answer.value[y]) {
+            } else if (inp.value[i] == answer.value[y]) {
                 div += '<span class="glyphicon glyphicon"></span>'
             } else {
                 div += '<span class="glyphicon glyphicon-remove"></span>'
