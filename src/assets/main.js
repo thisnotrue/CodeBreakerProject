@@ -72,7 +72,7 @@ function getResults(inp) {
                 count++;
                 div += '<span class="glyphicon glyphicon-ok"></span>'
             } else if (inp[i] == answer.value[y]) {
-                div += '<span class="glyphicon glyphicon"></span>'
+                div += '<span class="glyphicon glyphicon-transfer"></span>'
             } else {
                 div += '<span class="glyphicon glyphicon-remove"></span>'
             }
