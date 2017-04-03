@@ -68,12 +68,12 @@ function getResults(inp) {
 
     for (let i = 0; i < 4; i++) {
         if (inp.charAt(i) == answer.value.charAt(i)) {
-            html += '<span class="glyphicon glyphicon-ok"></span>';
-            correct++;
+            div += '<span class="glyphicon glyphicon-ok"></span>';
+            count++;
         } else if (answer.value.indexOf(inp.charAt(i)) > -1) {
-            html += '<span class="glyphicon glyphicon-transfer"></span>';
+            div += '<span class="glyphicon glyphicon-transfer"></span>';
         } else {
-            html += '<span class="glyphicon glyphicon-remove"></span>';
+            div += '<span class="glyphicon glyphicon-remove"></span>';
         }
     }
 
