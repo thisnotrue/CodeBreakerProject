@@ -67,63 +67,45 @@ function getResults(inp) {
     let count = 0;
 
     for (let i = 0; i < 4; i++) {
-        for (let y = 0; y < 4; y++) {
-            if (inp[i] == answer.value[y] && y == i) {
-                count++;
-                div += '<span class="glyphicon glyphicon-ok"></span>';
-                continue;
-            } else if (inp[i] == answer.value[y]) {
-                div += '<span class="glyphicon glyphicon-transfer"></span>';
-                continue;
-            } else {
-                div += '<span class="glyphicon glyphicon-remove"></span>';
-                continue;
-            }
+        if (inp.charAt(i) == answer.value.charAt(i)) {
+            html += '<span class="glyphicon glyphicon-ok"></span>';
+            correct++;
+        } else if (answer.value.indexOf(inp.charAt(i)) > -1) {
+            html += '<span class="glyphicon glyphicon-transfer"></span>';
+        } else {
+            html += '<span class="glyphicon glyphicon-remove"></span>';
         }
     }
 
+}
 
-    //{
-    //     if(input.charAt(i) == answer.value.charAt(i))
-    //     {
-    //         html += '<span class="glyphicon glyphicon-ok"></span>';
-    //         correct++;
-    //     } else if (answer.value.indexOf(input.charAt(i)) > -1) {
-    //         html += '<span class="glyphicon glyphicon-transfer"></span>';
-    //     } else {
-    //         html += '<span class="glyphicon glyphicon-remove"></span>';
-    //     }
-    // }
+div += '</span></div>';
+results.innerHTML = div;
 
-    div += '</span></div>';
-    results.innerHTML = div;
-
-    if (count == 4) {
-        return true;
-    } else {
-        return false;
-    }
+if (count == 4) {
+    return true;
+} else {
+    return false;
+}
 }
 
 //Create a showAnswer function
-function showAnswer(success){
+function showAnswer(success) {
 
     document.getElementById('code').innerHTML = answer.value;
     let code = document.getElementById("code");
-    
-    if(success){
+
+    if (success) {
         code.className += " success";
-    } else{
+    } else {
         code.className += " failure";
     }
 }
 
 // Create a showReplay function
-function showReplay(){
+function showReplay() {
     let guess = document.getElementById('guessing-div');
     let replay = document.getElementById('replay-div');
     guess.style.display = 'none';
     replay.style.display = 'block';
 }
-
-
