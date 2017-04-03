@@ -11,13 +11,13 @@ function guess() {
     }
 
     //input validation
-    if (!validateInput(input)) {
+    if (!validateInput(input.value)) {
         return false;
     } else {
         attempt.value++;
     }
 
-    if (getResults(input)) {
+    if (getResults(input.value)) {
         setMessage('You Win! :)');
         showAnswer(true);
         showReplay();
@@ -51,7 +51,8 @@ function setMessage(message) {
 
 //Call the validateInput function from the guess function
 function validateInput(inp) {
-    if (inp.length == 4) {
+    console.log(inp);
+    if (inp == 4) {
         return true;
     } else {
         setMessage('Guesses must be exactly 4 characters long.');
@@ -68,10 +69,10 @@ function getResults(inp) {
 
     for (let i = 0; i < 4; i++) {
         for (let y = 0; y < 4; y++) {
-            if (inp.value[i] == answer.value[y] && y == i) {
+            if (inp[i] == answer.value[y] && y == i) {
                 count++;
                 div += '<span class="glyphicon glyphicon-ok"></span>'
-            } else if (inp.value[i] == answer.value[y]) {
+            } else if (inp[i] == answer.value[y]) {
                 div += '<span class="glyphicon glyphicon"></span>'
             } else {
                 div += '<span class="glyphicon glyphicon-remove"></span>'
