@@ -60,7 +60,7 @@ function validateInput(inp) {
 }
 
 //Create getResults function
-function getResults(inp.value) {
+function getResults(inp) {
 
     let results = document.getElementById('results');
     let div = '<div class="row"><span class="col-md-6">' + inp.value + '</span><div class="col-md-6">';
