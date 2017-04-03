@@ -70,14 +70,30 @@ function getResults(inp) {
         for (let y = 0; y < 4; y++) {
             if (inp[i] == answer.value[y] && y == i) {
                 count++;
-                div += '<span class="glyphicon glyphicon-ok"></span>'
+                div += '<span class="glyphicon glyphicon-ok"></span>';
+                continue;
             } else if (inp[i] == answer.value[y]) {
-                div += '<span class="glyphicon glyphicon-transfer"></span>'
+                div += '<span class="glyphicon glyphicon-transfer"></span>';
+                continue;
             } else {
-                div += '<span class="glyphicon glyphicon-remove"></span>'
+                div += '<span class="glyphicon glyphicon-remove"></span>';
+                continue;
             }
         }
     }
+
+
+    //{
+    //     if(input.charAt(i) == answer.value.charAt(i))
+    //     {
+    //         html += '<span class="glyphicon glyphicon-ok"></span>';
+    //         correct++;
+    //     } else if (answer.value.indexOf(input.charAt(i)) > -1) {
+    //         html += '<span class="glyphicon glyphicon-transfer"></span>';
+    //     } else {
+    //         html += '<span class="glyphicon glyphicon-remove"></span>';
+    //     }
+    // }
 
     div += '</span></div>';
     results.innerHTML = div;
