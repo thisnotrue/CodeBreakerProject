@@ -77,16 +77,14 @@ function getResults(inp) {
         }
     }
 
-}
+    div += '</span></div>';
+    results.innerHTML = div;
 
-div += '</span></div>';
-results.innerHTML = div;
-
-if (count == 4) {
-    return true;
-} else {
-    return false;
-}
+    if (count == 4) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 //Create a showAnswer function
